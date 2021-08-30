@@ -1,0 +1,85 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "products": [
+    {
+      "id": 1,
+      "CatalogId": "T001",
+      "Name": "iPhone",
+      "Amount": 5,
+      "Price": 1,
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "CatalogId": "T002",
+      "Name": "Samsung",
+      "Amount": 15,
+      "Price": 2,
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "CatalogId": "T003",
+      "Name": "LG",
+      "Amount": 10,
+      "Price": 1,
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "CatalogId": "T004",
+      "Name": "Nokia",
+      "Amount": 5,
+      "Price": 3,
+      "isActive": false
+    },
+    {
+      "id": 5,
+      "CatalogId": "T005",
+      "Name": "Sony",
+      "Amount": 12,
+      "Price": 4,
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "CatalogId": "T006",
+      "Name": "Huawei",
+      "Amount": 5,
+      "Price": 2,
+      "isActive": false
+    },
+    {
+      "id": 7,
+      "CatalogId": "T007",
+      "Name": "Lenovo",
+      "Amount": 25,
+      "Price": 3,
+      "isActive": false 
+    },
+    {
+      "id": 8,
+      "CatalogId": "T008",
+      "Name": "Xiaomi",
+      "Amount": 15,
+      "Price": 1,
+      "isActive": false 
+    } 
+  ]
+}

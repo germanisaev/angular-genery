@@ -1,0 +1,70 @@
+
+<div class="card w-50">
+    <div class="card-header">
+        Product Detail
+    </div>
+
+    <div class="card-body">
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()" *ngIf="product$ | async">
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>Catalog #</label>
+                    <input type="text" formControlName="CatalogId" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.CatalogId.errors }" />
+                    <div *ngIf="submitted && f.CatalogId.errors" class="invalid-feedback">
+                        <div *ngIf="f.CatalogId.errors.required">CatalogId is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>Name</label>
+                    <input type="text" formControlName="Name" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" />
+                    <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
+                        <div *ngIf="f.Name.errors.required">Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>Amount</label>
+                    <input type="text" formControlName="Amount" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.Amount.errors }" />
+                    <div *ngIf="submitted && f.Amount.errors" class="invalid-feedback">
+                        <div *ngIf="f.Amount.errors.required">Amount is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>Price</label>
+                    <select formControlName="Price" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.Price.errors }">
+                        <option value=""></option>
+                        <option value="1">0-50 ש"ח</option>
+                        <option value="2">50-100 ש"ח</option>
+                        <option value="3">100-200 ש"ח</option>
+                        <option value="4">200 ומעלה ש"ח</option>
+                    </select>
+                    <div *ngIf="submitted && f.Price.errors" class="invalid-feedback">
+                        <div *ngIf="f.Price.errors.required">Price is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group form-check">
+                    <input type="checkbox" formControlName="isActive" id="isActive" class="form-check-input"
+                        [ngClass]="{ 'is-invalid': submitted && f.isActive.errors }" />
+                    <label for="isActive" class="form-check-label">Is Active</label>
+                    <div *ngIf="submitted && f.isActive.errors" class="invalid-feedback">Is Active</div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-sm btn-primary mr-1"><i class="fa fa-pencil" aria-hidden="true"></i></button>&nbsp;
+                <button class="btn btn-sm btn-secondary" type="reset" (click)="onReset()"><i class="fa fa-refresh" aria-hidden="true"></i></button>&nbsp;
+                <a class="btn btn-sm btn-primary" [routerLink]="['/']"><i class="fa fa-undo" aria-hidden="true"></i></a>
+            </div>
+        </form>
+    </div>
+</div>

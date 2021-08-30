@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-6 col-xs-12 mt-3">
+        <input type="text" id="search-text" class="form-control" name="searchText" aria-describedby="search-text"
+            [(ngModel)]="searchText" placeholder="Enter text to search" autofocus>
+    </div>
+    <div class="col-md-6 col-xs-12 mt-3">
+        <select [(ngModel)]="sortText" class="form-control">
+            <option value="">Choose record for sort</option>
+            <option value="Name">Name</option>
+            <option value="Price">Price</option>
+        </select>
+    </div>
+</div>
+
+
+<table class="table" *ngIf="products$ | async as products">
+    <thead>
+        <tr>
+            <th>Catalog #</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Active</th>
+            <th>Option</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products | jsonFilterBy: [searchText, 'Name'] | sortBy:'asc|desc':sortText">
+            <td>{{product.CatalogId}}</td>
+            <td>{{product.Name}}</td>
+            <td>{{product.Amount}}</td>
+            <td>{{product.Price}}</td>
+            <td>{{product.isActive}}</td>
+            <td>
+                <a class="btn btn-sm btn-primary" [routerLink]="['/products', product.id]"><i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp;
+                <a class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>

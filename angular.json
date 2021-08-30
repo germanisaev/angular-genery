@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tax-free"
+    }
+  },
+  "defaultProject": "tax-free",
+  "cli": {
+    "analytics": "a8277ce1-34a2-46e6-a52a-b9a8788029e8"
+  }
 }
